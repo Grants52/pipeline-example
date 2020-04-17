@@ -6,7 +6,7 @@ env:
   BRANCH              : "${{ github.ref }}"
 
 on:
-  push:
+  delete:
 #    branches: 
 #      - master
 jobs:        
@@ -20,6 +20,9 @@ jobs:
                    
         - name: Print branchname
           run:  echo "${{env.BRANCH}}"
+          
+        - name: Print action   
+          run: echo "Im going to remove the resources related to ${{env.BRANCH}}
 
     
     
