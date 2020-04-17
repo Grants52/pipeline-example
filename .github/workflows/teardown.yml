@@ -22,7 +22,7 @@ jobs:
           run:  echo "${{env.BRANCH}}"
           
         - name: Print action   
-          run: echo "Im going to remove the resources related to ${{env.BRANCH}}
+          run: echo "Im going to remove the resources related to ${{env.BRANCH}}"
 
     
     
