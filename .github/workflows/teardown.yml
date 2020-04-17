@@ -1,0 +1,25 @@
+name: Test-teardown
+env: 
+  S3_BUCKET_NAME      : "${{ github.sha }}"
+  DEPLOY_PACKAGE_NAME : "packages/docs-site/public"
+  AWS_REGION_NAME     : "eu-west-2"
+  BRANCH              : "${{ github.ref }}"
+
+on:
+  push:
+#    branches: 
+#      - master
+jobs:        
+     docs-site_teardown_pipeline:
+      runs-on: ubuntu-latest
+      
+      steps:
+        - name: Git clone repository
+          uses: actions/checkout@v2  
+                    
+                   
+        - name: Print branchname
+          run:  echo "${{env.BRANCH}}"
+
+    
+    
