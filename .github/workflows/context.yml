@@ -1,3 +1,4 @@
+name: publish-context-values
 on: push
 
 jobs:
