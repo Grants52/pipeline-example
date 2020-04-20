@@ -32,14 +32,14 @@ jobs:
         - name: Print branchname
           run:  echo "${{env.BRANCH}}"
           
-        - name: Print action   
-          run: echo "Im going to remove the resources related to "${{env.BRANCH2}}""
+#        - name: Print action   
+#          run: echo "Im going to remove the resources related to "${{env.BRANCH2}}""
           
 #        - name: Print Delete Bucket 
 #          run: echo "Im going to remove the resources related to "${{env.S3_BUCKET_NAME_D}}${{env.BRANCH2}}${{env.RUN}}"" 
         
-        - name: Print run number 
-          run: echo "${{env.RUN}}"
+#        - name: Print run number 
+#          run: echo "${{env.RUN}}"
 
         - name: Print New bucket
           run: echo "${{env.S3_BUCKET_NAME_N}}"
