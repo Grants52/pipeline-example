@@ -7,13 +7,10 @@ env:
   BRANCH2             : "${BRANCH////-}"
   RUN                 : "${{ github.run_number }}"
   S3_BUCKET_NAME_D      : "docssite-"
-  S3_BUCKET_NAME_N      : "${BRANCH2}"
-  
-  
-   
-  
-  
-  
+  S3_BUCKET_NAME_N      : "docssite-${BRANCH////-}"
+    
+     
+    
 on:
   delete:
 #    branches: 
