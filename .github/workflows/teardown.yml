@@ -7,7 +7,8 @@ env:
 #  BRANCH2             : "${BRANCH////-}"
 #  RUN                 : "${{ github.run_number }}"
 #  S3_BUCKET_NAME_D      : "docssite-"
-  S3_BUCKET_NAME_N      : "docssite-${BRANCH////-}${{ github.run_number }}"
+  S3_BUCKET_NAME_D      : "docssite-${BRANCH////-}${{ github.run_number }}"
+  S3_BUCKET_NAME_S      : "storybook-${BRANCH////-}${{ github.run_number }}"
     
      
     
@@ -41,6 +42,8 @@ jobs:
 #        - name: Print run number 
 #          run: echo "${{env.RUN}}"
 
-        - name: Print New bucket
-          run: echo "${{env.S3_BUCKET_NAME_N}}"
+        - name: Print New bucket names
+          run: |
+              echo "${{env.S3_BUCKET_NAME_D}}"
+              echo "${{env.S3_BUCKET_NAME_S}}"
     
