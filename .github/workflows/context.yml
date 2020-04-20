@@ -15,5 +15,8 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
       
       - name: Print job id
-        run: echo "${{env.JOB_ID}}"
+        run: echo "${{ env.JOB_ID }}"
+        
+      - name: Print event ref
+        run: echo "${{ github.event.ref }}"  
     
