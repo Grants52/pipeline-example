@@ -4,9 +4,9 @@ env:
   DEPLOY_PACKAGE_NAME : "packages/docs-site/public"
   AWS_REGION_NAME     : "eu-west-2"
   BRANCH              : "${{ github.event.ref }}"
-  BRANCH2             : "${BRANCH////-}"
-  RUN                 : "${{ github.run_number }}"
-  S3_BUCKET_NAME_D      : "docssite-"
+#  BRANCH2             : "${BRANCH////-}"
+#  RUN                 : "${{ github.run_number }}"
+#  S3_BUCKET_NAME_D      : "docssite-"
   S3_BUCKET_NAME_N      : "docssite-${BRANCH////-}${{ github.run_number }}"
     
      
@@ -35,8 +35,8 @@ jobs:
         - name: Print action   
           run: echo "Im going to remove the resources related to "${{env.BRANCH2}}""
           
-        - name: Print Delete Bucket 
-          run: echo "Im going to remove the resources related to "${{env.S3_BUCKET_NAME_D}}${{env.BRANCH2}}${{env.RUN}}"" 
+#        - name: Print Delete Bucket 
+#          run: echo "Im going to remove the resources related to "${{env.S3_BUCKET_NAME_D}}${{env.BRANCH2}}${{env.RUN}}"" 
         
         - name: Print run number 
           run: echo "${{env.RUN}}"
