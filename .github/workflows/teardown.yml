@@ -3,7 +3,7 @@ env:
   S3_BUCKET_NAME      : "${{ github.sha }}"
   DEPLOY_PACKAGE_NAME : "packages/docs-site/public"
   AWS_REGION_NAME     : "eu-west-2"
-  BRANCH              : "${{ github.ref }}"
+  BRANCH              : "${{ github.event.ref }}"
 
 on:
   delete:
