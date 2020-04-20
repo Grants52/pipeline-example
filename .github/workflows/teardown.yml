@@ -5,7 +5,7 @@ env:
   AWS_REGION_NAME     : "eu-west-2"
   BRANCH              : "${{ github.event.ref }}"
   BRANCH2             : "${BRANCH////-}"
-  RUN                 : "${{ github.event.run }}"
+  RUN                 : "${{ github.run_number }}"
   S3_BUCKET_NAME_D      : "docssite-"
    
   
@@ -36,7 +36,7 @@ jobs:
           run: echo "Im going to remove the resources related to "${{env.BRANCH2}}""
           
         - name: Print Delete Bucket 
-          run: echo "Im going to remove the resources related to "${{env.S3_BUCKET_NAME_D}}${{env.BRANCH2}}"" 
+          run: echo "Im going to remove the resources related to "${{env.S3_BUCKET_NAME_D}}${{env.BRANCH2}}.${{env.RUN}}"" 
         
         - name: Print run number 
           run: echo "${{env.RUN}}"
