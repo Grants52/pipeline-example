@@ -23,12 +23,11 @@ jobs:
         - name: Git clone repository
           uses: actions/checkout@v2  
           
-   #     - name: Dump GitHub context
-   #       env:
-  #        GITHUB_CONTEXT: ${{ toJson(github) }}
-  #        run: echo "$GITHUB_CONTEXT"
-          
-   
+        - name: Dump GitHub context
+          env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+          run: echo "$GITHUB_CONTEXT"
+       
                    
         - name: Print branchname
           run:  echo "${{env.BRANCH}}"
@@ -37,7 +36,7 @@ jobs:
           run: echo "Im going to remove the resources related to "${{env.BRANCH2}}""
           
         - name: Print Delete Bucket 
-          run: echo "Im going to remove the resources related to "${{env.S3_BUCKET_NAME_D}}.${{env.BRANCH2}}"" 
+          run: echo "Im going to remove the resources related to "${{env.S3_BUCKET_NAME_D}}${{env.BRANCH2}}"" 
         
         - name: Print run number 
           run: echo "${{env.RUN}}"
