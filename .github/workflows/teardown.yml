@@ -7,7 +7,7 @@ env:
   BRANCH2             : "${BRANCH////-}"
   RUN                 : "${{ github.run_number }}"
   S3_BUCKET_NAME_D      : "docssite-"
-  S3_BUCKET_NAME_N      : "docssite-${BRANCH////-}"
+  S3_BUCKET_NAME_N      : "docssite-${BRANCH////-}${{ github.run_number }}"
     
      
     
