@@ -7,7 +7,7 @@ env:
   BRANCH2             : "${BRANCH////-}"
   RUN                 : "${{ github.event.run_number }}"
    
-  S3_BUCKET_NAME_D     : "docssite-$BRANCH2-${{ github.event.run_number }}"
+  S3_BUCKET_NAME_D     : "docssite-$BRANCH2"
   
   
 on:
@@ -39,7 +39,10 @@ jobs:
           run: echo "Im going to remove the resources related to "${{env.BRANCH2}}""
           
         - name: Print Delete Bucket  
-          run: echo "Im going to remove the resources related to "${{env.RUN}}"" 
+          run: echo "Im going to remove the resources related to "${{env.S3_BUCKET_NAME_D}}"" 
+        
+        - name: Print run number 
+          run: echo "${{env.RUN}}"
 
     
     
