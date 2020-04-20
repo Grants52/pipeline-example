@@ -1,7 +1,7 @@
 name: publish-context-values
 on: push
 env:
-  JOB_ID: "{{ github.event.run_id }}"
+  JOB_ID: "${{ github.event.run_id }}"
 
   
 
