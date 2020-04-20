@@ -5,9 +5,9 @@ env:
   AWS_REGION_NAME     : "eu-west-2"
   BRANCH              : "${{ github.event.ref }}"
   BRANCH2             : "${BRANCH////-}"
-  RUN                 : "${{ github.event.run_number }}"
+  RUN                 : "${{ github.event.run }}"
    
-  S3_BUCKET_NAME_D     : "docssite-$BRANCH2"
+  S3_BUCKET_NAME_D     : "docssite-${{ env.BRANCH2 }}"
   
   
 on:
