@@ -37,7 +37,7 @@ jobs:
           run: echo "Im going to remove the resources related to "${{env.BRANCH2}}""
           
         - name: Print Delete Bucket 
-          run: echo "Im going to remove the resources related to "${{env.S3_BUCKET_NAME_D}}"" 
+          run: echo "Im going to remove the resources related to "${{env.S3_BUCKET_NAME_D}}.${{env.BRANCH2}}"" 
         
         - name: Print run number 
           run: echo "${{env.RUN}}"
