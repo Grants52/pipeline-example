@@ -45,5 +45,5 @@ jobs:
           run: echo "${{env.RUN}}"
 
         - name: Print New bucket
-          run: echo "${{S3_BUCKET_NAME_N}}"
+          run: echo "${{env.S3_BUCKET_NAME_N}}"
     
