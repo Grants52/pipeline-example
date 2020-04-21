@@ -49,8 +49,9 @@ jobs:
     
         - name: Apply bucket policies
           run: |
-            echo '{
-                  "Version": "2012-10-17",
+              cat <<EOF >policy.json
+              {
+                "Version": "2012-10-17",
                   "Statement": [
                       {
                           "Sid": "PublicReadGetObject",
@@ -60,6 +61,10 @@ jobs:
                           "Resource": "arn:aws:s3:::${{env.S3_BUCKET_NAME_D}}/*"
                       }
                   ]
-              }' >policy.json
+              }
+              EOF
               echo "aws s3api put-bucket-policy --bucket ${{env.S3_BUCKET_NAME_D}} --policy file://policy.json"
-              cat policy.json
+              
+              
+        - name: Apply bucket policies
+          run: cat policy.json
