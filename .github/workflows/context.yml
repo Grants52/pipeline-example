@@ -30,3 +30,8 @@ jobs:
         run: |
           echo "${{ env.S3_BUCKET_NAME_D }}
           echo "${{ env.S3_BUCKET_NAME_S }}
+
+      - name: Print Bucket names in new step
+        run: |
+          echo "${{ env.S3_BUCKET_NAME_D }}
+          echo "${{ env.S3_BUCKET_NAME_S }}
