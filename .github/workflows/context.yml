@@ -2,7 +2,7 @@ name: publish-context-values
 on: push
 env:
   JOB_ID: "${{ github.event.run_id }}"
-  BRANCH: "${{ github.event.ref##refs/heads/}}"
+  BRANCH: "${{ github.event.ref#refs/heads/}}"
   
 
 jobs:
