@@ -20,7 +20,7 @@ jobs:
       - name: Set ENV
         run: |
           echo "::set-env name=BRANCH_NAME::$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//-/g')"
-          echo "::set-env name=S3_BUCKET_NAME_D::$(echo docssite-$BRANCH_NAME${{ github.run_number }}"
+          echo "::set-env name=S3_BUCKET_NAME_D::$(echo "docssite-$BRANCH_NAME${{ github.run_number }}""
         
       - name: Print Branch
         run: echo "$BRANCH_NAME"  
