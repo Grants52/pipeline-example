@@ -22,4 +22,10 @@ jobs:
         
       - name: Print Branch
         run: echo "$BRANCH_NAME"  
-    
+      
+      - name: Print Bucket names
+        env:
+          S3_BUCKET_NAME_D      : "docssite-$BRANCH_NAME${{ github.run_number }}"
+          S3_BUCKET_NAME_S      : "storybook-$BRANCH_NAME${{ github.run_number }}"
+        run: echo "${{ env.S3_BUCKET_NAME_D }}
+        run: echo "${{ env.S3_BUCKET_NAME_S }}
