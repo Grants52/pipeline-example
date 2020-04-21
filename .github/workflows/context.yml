@@ -3,7 +3,8 @@ on: push
 env:
   JOB_ID: "${{ github.event.run_id }}"
   BRANCH: "${{ github.event.ref }}"
-  
+  S3_BUCKET_NAME_D      : "docssite-${BRANCH_NAME}${{ github.run_number }}"
+  S3_BUCKET_NAME_S      : "storybook-${BRANCH_NAME}${{ github.run_number }}"
 
 jobs:
   one:
@@ -20,15 +21,15 @@ jobs:
       - name: Set ENV
         run: |
           echo "::set-env name=BRANCH_NAME::$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//-/g')"
-          echo "::set-env name=S3_BUCKET_NAME_D::$(echo "docssite-$BRANCH_NAME${{ github.run_number }}""
+       #   echo "::set-env name=S3_BUCKET_NAME_D::$(echo "docssite-$BRANCH_NAME${{ github.run_number }}""
         
       - name: Print Branch
         run: echo "$BRANCH_NAME"  
       
       - name: Print Bucket names
         env:
-          S3_BUCKET_NAME_D      : "docssite-${BRANCH_NAME}${{ github.run_number }}"
-          S3_BUCKET_NAME_S      : "storybook-${BRANCH_NAME}${{ github.run_number }}"
+  #        S3_BUCKET_NAME_D      : "docssite-${BRANCH_NAME}${{ github.run_number }}"
+  #        S3_BUCKET_NAME_S      : "storybook-${BRANCH_NAME}${{ github.run_number }}"
         run: |
           echo "${{ env.S3_BUCKET_NAME_D }}
           echo "${{ env.S3_BUCKET_NAME_S }}
