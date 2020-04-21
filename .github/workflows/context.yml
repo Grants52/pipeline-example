@@ -17,6 +17,9 @@ jobs:
       - name: Print job id
         run: echo "${{ env.JOB_ID }}"
         
+      - name: Set ENV
+        run: echo "::set-env name=BRANCH_NAME::$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//-/g')"
+        
       - name: Print Branch
-        run: echo "${{ env.BRANCH }}"  
+        run: echo "$BRANCH_NAME"  
     
