@@ -14,10 +14,6 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Code Deployed..'
-            }
-        stage('Run job') {
-            steps {
                 build job: 'helloworld_job'
             }
         }
