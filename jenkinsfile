@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                build job: 'first-jerkins-job'
+                echo 'Code Deployed..'
             }
         }
     }
