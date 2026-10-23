@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                build job: 'helloworld_job'
+                echo  'Deploying..'
             }
         }
     }
